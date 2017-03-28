@@ -1,0 +1,34 @@
+<ion-view view-title="Vibbe Coin">
+  <ion-content ng-controller="listwithdrawCtrl">
+    <center><br>
+    <h2>Send Funds</h2><br><br>
+    <label class="item item-input">
+    <i class="icon ion-pricetags placeholder-icon"></i>
+    <input type="text" placeholder="Amount">
+</label>
+    <label class="item item-input">
+    <i class="icon ion-arrow-right-c placeholder-icon"></i>
+    <input type="text" placeholder="Address">
+</label><br>
+<div ng-controller="scanCtrl">
+<button class="button icon-left ion-android-expand" ng-click="scanBarcode()">Scan QR</button>
+
+<button class="button icon-left ion-paper-airplane">Send</button>
+
+</div>
+<hr>
+  <div ng-repeat="obj in result track by $index">
+        
+       <div class="row">
+        <div class="col">{{ obj.date }}</div>
+        <div class="col">{{ obj.type }}</div>
+        <div class="col">{{ obj.address }}</div>
+        <div class="col">{{ obj.status }}</div>
+      </div>
+      </div>
+      <div ng-hide="result.length > 0">
+        No transactions.
+    </div>
+    </center>
+  </ion-content>
+</ion-view>

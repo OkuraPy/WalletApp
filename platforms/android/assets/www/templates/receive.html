@@ -1,0 +1,37 @@
+<ion-view view-title="Receive Funds">
+  <ion-content>
+    <center>
+<img src="https://chart.googleapis.com/chart?chs=250x250&cht=qr&chl=vcbc116846846846846846846846846854684"><br>
+<div class="list">
+
+  <label class="item item-input item-select">
+    <div class="input-label">
+      VBC Address
+    </div>
+    <select>
+      <option>vcbc116846846846846846846846846854684</option>
+      <option selected>vsf646h4d65r4g6s4g5d465g46s4gdf</option>
+      <option>Vd64s54d6s5d46s5d4sd54s6d4s646d4sd54</option>
+    </select>
+  </label>
+
+</div>
+    <br><br><hr class="ion-item-divider">
+      <div ng-repeat="obj in result track by $index">
+        
+       <div class="row">
+        <div class="col">{{ obj.date }}</div>
+        <div class="col">{{ obj.type }}</div>
+        <div class="col">{{ obj.address }}</div>
+        <div class="col">{{ obj.status }}</div>
+      </div>
+      </div>
+      <div ng-hide="result.length > 0">
+        No transactions.
+    </div>
+    
+
+    <br>
+    </center>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,24 @@
+<ion-view view-title="Vibbe Coin">
+  <ion-content ><center><br>
+  <div ng-controller="balanceCtrl">
+    <h2>{{ result }}  VBC</h2>
+  </div>
+    <br><ion-item class="item-divider"></ion-item>
+    <br>
+    <div ng-controller="transactionsCtrl">
+  <div ng-repeat="obj in result track by $index" ng-if="$index < 5">
+        
+       <div class="row">
+        <div class="col">{{ obj.date }}</div>
+        <div class="col">{{ obj.type }}</div>
+        <div class="col">{{ obj.address }}</div>
+        <div class="col">{{ obj.status }}</div>
+      </div>
+      </div>
+      <div ng-hide="result.length > 0">
+        No transactions.
+    </div>
+    </div>
+    </center>
+  </ion-content>
+</ion-view>

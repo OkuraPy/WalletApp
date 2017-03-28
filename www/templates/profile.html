@@ -1,0 +1,28 @@
+<ion-view title="Profile">
+    <ion-content padding="'true'" class="has-header" ng-controller="profileCtrl">
+ 
+        
+		<ion-list ng-repeat="obj in result track by $index">
+            
+			<ion-item class="item-divider">Profile Details</ion-item>
+			
+			
+			<label class="item item-input">
+                <span class="input-label">Name</span>
+				<textarea placeholder="" ng-model="data.name"> {{ obj.name }}</textarea>
+            </label>
+			
+			<label class="item item-input">
+                <span class="input-label">Email</span>
+				<textarea placeholder="" readonly>{{ obj.email }} </textarea>
+            </label>
+ 
+			<label class="item item-input">
+                <span class="input-label">Phone</span>
+				<textarea placeholder="" ng-model="data.phone"> {{ obj.phone }}</textarea>
+            </label>
+		        </ion-list>
+        <button class="button button-stable button-full icon-left ion-checkmark-round" ng-controller="updateprofileCtrl" ng-click="submit()">Save</button>
+    </ion-content>
+</ion-view>
+ 
